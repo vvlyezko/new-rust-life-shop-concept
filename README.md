@@ -50,7 +50,7 @@ assets/ fonts, svg
 
 ## Credits and licences
 
-Design & concept: **Vlyezko Studio**. Code: [MIT](LICENSE). Fonts: [SIL OFL 1.1](OFL.txt). Product names, copy and prices are invented for the concept.
+Design & concept: **Vlyezko Studio**. Code: [MIT](LICENSE). Design files, artwork and previews: [CC BY-NC 4.0](LICENSE-DESIGN.md). Fonts: [SIL OFL 1.1](OFL.txt). Product names, copy and prices are invented for the concept.
 
 ---
 
@@ -81,4 +81,4 @@ Design & concept: **Vlyezko Studio**. Code: [MIT](LICENSE). Fonts: [SIL OFL 1.1]
 
 ### Авторы и лицензии
 
-Дизайн и концепт: **Vlyezko Studio**. Код: [MIT](LICENSE). Шрифты: [SIL OFL 1.1](OFL.txt). Названия товаров, тексты и цены придуманы для концепта.
+Дизайн и концепт: **Vlyezko Studio**. Код: [MIT](LICENSE). Файлы дизайна, графика и превью: [CC BY-NC 4.0](LICENSE-DESIGN.md). Шрифты: [SIL OFL 1.1](OFL.txt). Названия товаров, тексты и цены придуманы для концепта.
