@@ -1,0 +1,174 @@
+/* Shared blocks used on several pages: button variants, surfaces, badge, tag, product card,
+   breadcrumbs, section head, server status plate. Header and footer live in components.css. */
+
+/* ---------- Buttons: variants ---------- */
+.btn { cursor: pointer; }
+.btn--secondary { background: var(--panel); border-color: var(--metal); color: var(--bone); }
+.btn--secondary::before { display: none; }
+.btn--secondary:hover { background: var(--panel); border-color: var(--orange); box-shadow: 0 0 18px rgb(240 106 60 / .25); }
+.btn--secondary:active { background: var(--bg); border-color: var(--orange); box-shadow: none; }
+.btn--ghost { background: transparent; border-color: transparent; color: var(--orange); }
+.btn--ghost::before { display: none; }
+.btn--ghost:hover { background: rgb(240 106 60 / .1); border-color: transparent; box-shadow: none; }
+.btn--ghost:active { background: rgb(240 106 60 / .18); }
+.btn--block { display: flex; width: 100%; }
+.btn--lg { min-height: 60px; }
+
+/* ---------- Surfaces ---------- */
+.tex-card {
+  background-color: var(--panel);
+  background-image: var(--grain);
+  border: 2px solid var(--metal);
+  border-radius: var(--radius);
+}
+.label {
+  margin: 0; font-weight: 700; font-size: 13px; line-height: 1.15; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray);
+}
+.kicker { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.2; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); }
+.rule { height: 1px; margin: 0; border: 0; background: var(--metal); }
+.bar { display: block; width: 48px; height: 4px; background: var(--rust); }
+
+/* ---------- Badge artwork (exported from Figma; the file carries a shadow margin) ---------- */
+.badge { position: relative; display: block; flex: none; width: var(--s); height: var(--s); }
+.badge img { position: absolute; left: -6.25%; top: -2.5%; width: 112.5%; height: 112.5%; max-width: none; }
+
+/* ---------- Tag chips ---------- */
+.tag {
+  display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 3px;
+  font-weight: 700; font-size: 15px; line-height: 18px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap;
+}
+.tag--hit { background: var(--btn); color: var(--white); }
+.tag--sale { background: var(--bone); color: var(--bg); }
+.tag--cart { border: 2px solid var(--ok); color: var(--ok); }
+
+/* ---------- Product card ---------- */
+.card {
+  position: relative; display: flex; flex-direction: column; gap: 14px; padding: 24px; min-width: 0;
+  background-color: var(--panel); background-image: var(--grain);
+  border: 2px solid var(--metal); border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .07), inset 0 -3px 6px rgb(0 0 0 / .45);
+  transition: border-color .15s, box-shadow .15s;
+}
+.card:hover { border-color: var(--orange); box-shadow: 0 0 20px rgb(240 106 60 / .35), inset 0 1px 0 rgb(255 255 255 / .07), inset 0 -3px 6px rgb(0 0 0 / .45); }
+.card:hover .btn:not(.btn--secondary):not(:disabled) { background: var(--btn-hover); border-color: var(--orange); box-shadow: 0 0 16px rgb(240 106 60 / .45); }
+.card--in-cart, .card--in-cart:hover { border-color: var(--ok); }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; min-height: 104px; }
+.card-badge { display: block; }
+.card-title { font-size: 34px; line-height: 1.47; letter-spacing: 1.5px; }
+.card-title a::after { content: ""; position: absolute; inset: 0; } /* the whole card opens the product */
+.card-title a:focus-visible { outline-offset: -2px; }
+.card-desc { flex: 1 1 auto; margin: 0; font-size: 18px; line-height: 25px; color: var(--gray); }
+.card .terms, .card .btn { position: relative; z-index: 1; }
+.terms { display: flex; flex-wrap: wrap; gap: 10px; }
+.term {
+  padding: 8px 14px; min-height: 39px; background: var(--bg); border: 2px solid var(--metal); border-radius: var(--radius-sm);
+  font-weight: 700; font-size: 16px; line-height: 19px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bone);
+}
+.term:hover { border-color: var(--orange); }
+.term[aria-pressed="true"] { border-color: var(--orange); color: var(--orange); }
+.card-rule { height: 1px; margin: 0; border: 0; background: var(--metal); }
+.card-price, .product-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 12px; }
+.price { font-family: var(--font-display); font-weight: 700; font-size: 42px; line-height: 48px; color: var(--bone); }
+.price-old { font-size: 20px; color: var(--gray); text-decoration: line-through; }
+.price-per { font-size: 17px; color: var(--gray); }
+
+/* ---------- Breadcrumbs ---------- */
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 8px 10px; font-weight: 700; font-size: 13px; line-height: 15px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); }
+.crumbs li + li::before { content: "/"; margin-right: 10px; font-weight: 400; }
+.crumbs a:hover { color: var(--orange); }
+.crumbs [aria-current] { color: var(--bone); }
+
+/* ---------- Section head ---------- */
+.section-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.section-head-main { display: flex; flex-direction: column; gap: 8px; }
+.section-head h2 { font-size: 42px; line-height: 48px; letter-spacing: 2px; }
+.section-lead { margin: 0; font-size: 17px; line-height: 24px; color: var(--gray); }
+
+/* ---------- Server status plate ---------- */
+.status {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px;
+  border: 2px solid var(--metal); border-radius: var(--radius);
+}
+.status > * { min-width: 0; }
+.status-wipe, .status-online, .status-ip, .status-div { grid-column: 1 / -1; }
+.status-div { height: 1px; margin: 0; border: 0; background: var(--metal); }
+.status-div--mid { display: none; }
+.status p { margin: 0; }
+.status-wipe, .status-online, .status-map, .status-last, .status-ip { display: flex; flex-direction: column; gap: 6px; }
+.status-map, .status-last { gap: 2px; }
+.status-wipe { gap: 8px; }
+.countdown { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-width: 460px; }
+.cd-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.cd-plate {
+  display: flex; align-items: center; justify-content: center; width: 100%; height: 54px;
+  background: var(--metal); border-radius: var(--radius-sm);
+  font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 40px; color: var(--orange);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / .55), inset 0 -1px 0 rgb(255 255 255 / .06);
+}
+.cd-label { font-weight: 700; font-size: 11px; line-height: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.status-sub { font-size: 15px; line-height: 18px; color: var(--gray); }
+.status-big { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 28px; letter-spacing: 1px; text-transform: uppercase; color: var(--bone); }
+.status-big--lg { font-size: 28px; line-height: 34px; }
+.status .label { display: flex; align-items: center; gap: 8px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 8px rgb(143 191 106 / .8); }
+.track { height: 6px; margin-top: 6px; border-radius: 3px; background: var(--metal); overflow: hidden; }
+.track i { display: block; height: 100%; border-radius: 3px; background: var(--orange); }
+@media (prefers-reduced-motion: no-preference) { .track i { transition: width .6s ease; } }
+.ip-row { display: flex; flex-direction: column; gap: 8px; }
+.ip { font-family: var(--font-ui); font-weight: 700; font-size: 20px; line-height: 23px; letter-spacing: .5px; color: var(--bone); }
+.ip-row .btn { width: 100%; }
+
+@media (min-width: 768px) {
+  .section-head h2 { font-size: 60px; line-height: 68px; letter-spacing: 3px; }
+  .section-head .bar { width: 64px; }
+  .section-lead { font-size: 20px; line-height: 28px; }
+  .section-head { margin-bottom: 40px; }
+  .crumbs ol { font-size: 14px; line-height: 16px; }
+  .status-big { font-size: 26px; line-height: 32px; }
+  .status-big--lg { font-size: 32px; line-height: 38px; }
+}
+@media (min-width: 1200px) {
+  .section-head { flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 40px; }
+  /* 1200–1399: four columns on top, server IP on its own row. The single row below needs 1400. */
+  .status { grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr)); align-items: center; gap: 20px 24px; padding: 22px 28px; }
+  .status-wipe { grid-column: 1; grid-row: 1; }
+  .status-online, .status-map, .status-last { grid-row: 1; padding-left: 24px; border-left: 2px solid var(--metal); }
+  .status-online { grid-column: 2; }
+  .status-map { grid-column: 3; }
+  .status-last { grid-column: 4; }
+  .status-div { display: none; }
+  .status-ip { grid-column: 1 / -1; grid-row: 2; padding-top: 18px; border-top: 1px solid var(--metal); }
+  .countdown { max-width: 240px; }
+  .ip-row { flex-direction: row; align-items: center; gap: 12px; }
+  .ip-row .btn { width: auto; }
+}
+
+@media (min-width: 1400px) {
+  .status { display: flex; align-items: center; gap: 24px; }
+  .status-div, .status-div--mid { display: block; width: 2px; height: 72px; flex: none; }
+  .status-wipe { flex: none; width: 208px; }
+  .countdown { display: flex; max-width: none; }
+  .cd-unit { width: 64px; }
+  .status-online { flex: none; width: 150px; padding-left: 0; border-left: 0; }
+  .status-map, .status-last { flex: none; padding-left: 0; border-left: 0; }
+  .status-ip { flex: 1 1 auto; padding-top: 0; border-top: 0; }
+  /* "Копировать IP" is wider than "Copy IP": the button drops under the address instead of sticking out */
+  html[lang="ru"] .ip-row { flex-wrap: wrap; gap: 8px 12px; }
+}
+
+/* 1200–1299: three narrow columns. Long Russian words (Железный, «Капюшон», Косметика) need a smaller size. */
+@media (min-width: 1200px) and (max-width: 1299px) {
+  html[lang="ru"] .card { padding: 20px; }
+  html[lang="ru"] .card-title { font-size: 28px; letter-spacing: 1px; }
+  html[lang="ru"] .tag { padding: 6px 10px; font-size: 14px; letter-spacing: 1.2px; }
+  html[lang="ru"] .card-top { flex-wrap: wrap; }
+  html[lang="ru"] .cat-text h3 { font-size: 23px; letter-spacing: .6px; }
+  html[lang="ru"] .cart-info h2 { font-size: 24px; letter-spacing: 1px; }
+}
+
+/* Touch targets: 44px minimum on phones */
+@media (max-width: 767px) {
+  .term { min-height: 44px; }
+  /* "Процедурная" is longer than "Procedural" and must fit a half-width cell */
+  html[lang="ru"] .status-big:not(.status-big--lg) { font-size: 19px; letter-spacing: .5px; }
+}

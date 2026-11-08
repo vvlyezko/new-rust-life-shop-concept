@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEW RUST LIFE — Rust server item shop</title>
+  <meta name="description" content="Fan-made concept of an item shop for a Rust survival server. Privileges, kits, resources, cosmetics and services. Design and concept by Vlyezko Studio.">
+  <meta name="theme-color" content="#0F1113">
+  <link rel="icon" type="image/svg+xml" href="assets/svg/mark.svg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/textures.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/blocks.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" id="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <div id="site-header"></div>
+  <main id="main" tabindex="-1"></main>
+  <div id="site-footer"></div>
+
+  <!-- Live regions: persistent so screen readers announce changes -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="sr-only" id="cart-live" aria-live="polite"></div>
+
+  <noscript>
+    <p style="padding:24px;color:#E9E3D6">This demo needs JavaScript. It runs entirely in your browser; nothing is sent anywhere.</p>
+  </noscript>
+
+  <!-- Classic scripts, one global namespace window.NRL. No modules, so it also works from file:// -->
+  <script defer src="i18n/en.js"></script>
+  <script defer src="i18n/ru.js"></script>
+  <script defer src="js/state.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/router.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/components.js"></script>
+  <script defer src="js/pages/home.js"></script>
+  <script defer src="js/pages/shop.js"></script>
+  <script defer src="js/pages/product.js"></script>
+  <script defer src="js/pages/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/actions.js"></script>
+</body>
+</html>

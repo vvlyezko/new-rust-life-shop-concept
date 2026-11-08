@@ -1,0 +1,43 @@
+/* Design tokens — NEW RUST LIFE. Values mirror the Figma collection "NRL / Color". */
+:root {
+  /* surfaces */
+  --bg: #0F1113;
+  --panel: #1B1E21;
+  --metal: #2A2E33;
+
+  /* accents */
+  --rust: #D9502A;            /* decorative only: emblem, badge rings, section bars */
+  --btn: #C4441E;             /* button fill: white text 5.01:1 */
+  --btn-hover: #A93A17;
+  --btn-pressed: #8F3014;
+  --orange: #F06A3C;          /* the only orange for small text, icons, focus */
+
+  /* text */
+  --bone: #E9E3D6;
+  --gray: #9AA0A6;
+  --white: #FFFFFF;
+
+  /* status */
+  --error: #FF8A6B;
+  --ok: #8FBF6A;
+
+  /* type */
+  --font-display: "Oswald", "Arial Narrow", system-ui, sans-serif;       /* 700, uppercase */
+  --font-ui: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;  /* 400 / 500 / 700 */
+
+  /* shape and layout */
+  --radius: 8px;
+  --radius-sm: 4px;
+  --container: 1280px;
+  /* 16px at 390 → 80px at 1440, linear in between */
+  --gutter: clamp(16px, calc(6.095vw - 7.77px), 80px);
+  /* footer sits on a wider gutter: 24px at 390 → 80px at 1440 */
+  --gutter-footer: clamp(24px, calc(5.333vw + 3.2px), 80px);
+
+  --header-h: 64px;
+}
+
+/* Full header (nav, language switch, sign-in) from 1200px; below that the compact header with burger */
+@media (min-width: 1200px) {
+  :root { --header-h: 88px; }
+}
