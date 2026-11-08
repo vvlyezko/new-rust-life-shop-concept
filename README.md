@@ -16,7 +16,7 @@ A clickable concept of an item shop for a Rust server: catalogue, product page, 
 |---|---|
 | ![Home, mobile](docs/preview-home-mobile.png) | ![Shop, mobile](docs/preview-shop-mobile.png) |
 
-- **Live demo:** _link is added after publishing_
+- **Live demo:** [vvlyezko.github.io/new-rust-life-shop-concept](https://vvlyezko.github.io/new-rust-life-shop-concept/)
 - **Figma:** _view-only link is added by the owner_
 
 ## What is clickable
@@ -60,7 +60,7 @@ Design & concept: **Vlyezko Studio**. Code: [MIT](LICENSE). Fonts: [SIL OFL 1.1]
 
 > Фан-концепт. Не связан с Facepunch Studios и Rust. Реальных платежей нет.
 
-- **Живое демо:** _ссылка появится после публикации_
+- **Живое демо:** [vvlyezko.github.io/new-rust-life-shop-concept](https://vvlyezko.github.io/new-rust-life-shop-concept/)
 - **Figma:** _ссылку для просмотра добавит владелец_
 
 ### Что кликается
